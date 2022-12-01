@@ -23,20 +23,33 @@ class Stack(Generic[T]):
 
     def __init__(self) -> None:
         """Create a new stack of values of type T."""
-        # FIXME: code here
+        self.stack = []
 
     def push(self, x: T) -> None:
         """Push x on the top of this stack."""
-        # FIXME: code here
+        self.stack.append(x)
 
     def top(self) -> T:
         """Return the top of the stack."""
-        # FIXME: code here
-
+        return self.stack[-1]
+        
     def pop(self) -> T:
         """Pop the top element off the stack and return it."""
-        # FIXME: code here
+        value = self.stack[-1]
+        self.stack.pop()
+        return value
 
     def is_empty(self) -> bool:
         """Test if the stack is empty."""
-        # FIXME: code here
+        if not self.stack:
+            return False
+        else: 
+            return True 
+
+
+stack = Stack()
+stack.push(1)
+stack.push(4)
+stack.push(3)
+print(stack.pop())
+print(stack.top())
